@@ -9,5 +9,5 @@ import Foundation
 
 struct Person {
     let firstName: String
-    let LastName: String
+    let lastName: String
 }
