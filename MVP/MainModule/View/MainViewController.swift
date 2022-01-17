@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
         label.font = UIFont(name: "ndff", size: 16)
         label.textColor = .black
         label.backgroundColor = .red
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
