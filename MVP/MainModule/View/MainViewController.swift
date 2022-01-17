@@ -26,14 +26,19 @@ class MainViewController: UIViewController {
         return button
     }()
 
+    var presenter: MainViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setConstraint()
+        showButton.addTarget(self, action: #selector(didTapButtonAction), for: .touchUpInside)
     }
 
 
+    @objc func didTapButtonAction() {
+        self.presenter.showGreeting()
+    }
     
     func setConstraint() {
         view.addSubview(greetingLabel)
@@ -52,6 +57,10 @@ class MainViewController: UIViewController {
             showButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
-    
 }
 
+extension MainViewController: MainViewProtocol {
+    func setGreeting(greeting: String) {
+        self.greetingLabel.text = greeting
+    }
+}

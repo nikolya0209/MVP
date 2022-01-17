@@ -10,12 +10,12 @@ import Foundation
 protocol MainViewProtocol: class {
     func setGreeting(greeting: String)
 }
-protocol MainPresenterProtocol: class {
+protocol MainViewPresenterProtocol: class {
     init(view: MainViewProtocol, person: Person)
     func showGreeting()
 }
 
-class MainPresenter: MainPresenterProtocol {
+class MainPresenter: MainViewPresenterProtocol {
    
     let view: MainViewProtocol
     let person: Person

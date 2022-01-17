@@ -101,14 +101,9 @@
 		525B22CE27949AEA009057C5 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				525B22CF27949AEA009057C5 /* AppDelegate.swift */,
-				525B22D127949AEA009057C5 /* SceneDelegate.swift */,
-				525B22D327949AEA009057C5 /* MainViewController.swift */,
-				525B22FF27949CFF009057C5 /* Person.swift */,
-				525B23032794A28A009057C5 /* MainPresenter.swift */,
-				525B22D827949AEC009057C5 /* Assets.xcassets */,
-				525B22DA27949AEC009057C5 /* LaunchScreen.storyboard */,
-				525B22DD27949AEC009057C5 /* Info.plist */,
+				525B23092795D010009057C5 /* Application */,
+				525B23052795CF9F009057C5 /* MainModule */,
+				525B230A2795D01E009057C5 /* Helpers */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -129,6 +124,59 @@
 				525B22F327949AEC009057C5 /* Info.plist */,
 			);
 			path = MVPUITests;
+			sourceTree = "<group>";
+		};
+		525B23052795CF9F009057C5 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				525B23062795CFBB009057C5 /* View */,
+				525B23072795CFCF009057C5 /* Model */,
+				525B23082795CFE2009057C5 /* Presenter */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		525B23062795CFBB009057C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				525B22D327949AEA009057C5 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		525B23072795CFCF009057C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				525B22FF27949CFF009057C5 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		525B23082795CFE2009057C5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				525B23032794A28A009057C5 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		525B23092795D010009057C5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				525B22CF27949AEA009057C5 /* AppDelegate.swift */,
+				525B22D127949AEA009057C5 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		525B230A2795D01E009057C5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				525B22D827949AEC009057C5 /* Assets.xcassets */,
+				525B22DA27949AEC009057C5 /* LaunchScreen.storyboard */,
+				525B22DD27949AEC009057C5 /* Info.plist */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8V9DS8345;
-				INFOPLIST_FILE = MVP/Info.plist;
+				INFOPLIST_FILE = MVP/Helpers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8V9DS8345;
-				INFOPLIST_FILE = MVP/Info.plist;
+				INFOPLIST_FILE = MVP/Helpers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
