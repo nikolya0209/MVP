@@ -17,6 +17,7 @@
 		525B230027949CFF009057C5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B22FF27949CFF009057C5 /* Person.swift */; };
 		525B23042794A28A009057C5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B23032794A28A009057C5 /* MainPresenter.swift */; };
 		525B230C2795F905009057C5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230B2795F905009057C5 /* ModuleBuilder.swift */; };
+		525B231027974857009057C5 /* MVPPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230F27974857009057C5 /* MVPPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		525B22FF27949CFF009057C5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		525B23032794A28A009057C5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		525B230B2795F905009057C5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		525B230F27974857009057C5 /* MVPPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				525B22E627949AEC009057C5 /* MVPTests.swift */,
+				525B230F27974857009057C5 /* MVPPresenterTest.swift */,
 				525B22E827949AEC009057C5 /* Info.plist */,
 			);
 			path = MVPTests;
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525B231027974857009057C5 /* MVPPresenterTest.swift in Sources */,
 				525B22E727949AEC009057C5 /* MVPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
