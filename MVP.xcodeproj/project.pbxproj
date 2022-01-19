@@ -14,10 +14,11 @@
 		525B22DC27949AEC009057C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525B22DA27949AEC009057C5 /* LaunchScreen.storyboard */; };
 		525B22E727949AEC009057C5 /* MVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B22E627949AEC009057C5 /* MVPTests.swift */; };
 		525B22F227949AEC009057C5 /* MVPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B22F127949AEC009057C5 /* MVPUITests.swift */; };
-		525B230027949CFF009057C5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B22FF27949CFF009057C5 /* Person.swift */; };
 		525B23042794A28A009057C5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B23032794A28A009057C5 /* MainPresenter.swift */; };
 		525B230C2795F905009057C5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230B2795F905009057C5 /* ModuleBuilder.swift */; };
 		525B231027974857009057C5 /* MVPPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230F27974857009057C5 /* MVPPresenterTest.swift */; };
+		525B231227988CC0009057C5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B231127988CC0009057C5 /* Comment.swift */; };
+		525B231727988DEC009057C5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B231627988DEC009057C5 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		525B22ED27949AEC009057C5 /* MVPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		525B22F127949AEC009057C5 /* MVPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPUITests.swift; sourceTree = "<group>"; };
 		525B22F327949AEC009057C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		525B22FF27949CFF009057C5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		525B23032794A28A009057C5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		525B230B2795F905009057C5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		525B230F27974857009057C5 /* MVPPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenterTest.swift; sourceTree = "<group>"; };
+		525B231127988CC0009057C5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		525B231627988DEC009057C5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				525B23092795D010009057C5 /* Application */,
+				525B231527988DCD009057C5 /* NetworkLayer */,
 				525B23052795CF9F009057C5 /* MainModule */,
 				525B230A2795D01E009057C5 /* Helpers */,
 			);
@@ -152,7 +155,7 @@
 		525B23072795CFCF009057C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				525B22FF27949CFF009057C5 /* Person.swift */,
+				525B231127988CC0009057C5 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				525B22DD27949AEC009057C5 /* Info.plist */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		525B231527988DCD009057C5 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				525B231627988DEC009057C5 /* NetworkService.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,11 +326,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				525B23042794A28A009057C5 /* MainPresenter.swift in Sources */,
+				525B231227988CC0009057C5 /* Comment.swift in Sources */,
 				525B22D427949AEA009057C5 /* MainViewController.swift in Sources */,
 				525B22D027949AEA009057C5 /* AppDelegate.swift in Sources */,
-				525B230027949CFF009057C5 /* Person.swift in Sources */,
 				525B22D227949AEA009057C5 /* SceneDelegate.swift in Sources */,
 				525B230C2795F905009057C5 /* ModuleBuilder.swift in Sources */,
+				525B231727988DEC009057C5 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

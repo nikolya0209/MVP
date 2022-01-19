@@ -8,60 +8,68 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    var greetingLabel: UILabel = {
-        var label = UILabel()
-        label.font = UIFont(name: "ndff", size: 16)
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
-    var showButton: UIButton = {
-        var button = UIButton()
-        button.backgroundColor = .blue
-        button.setTitle("show", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    private let tableView =  UITableView()
 
     var presenter: MainViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setConstraint()
-        showButton.addTarget(self, action: #selector(didTapButtonAction), for: .touchUpInside)
-    }
-
-
-    @objc func didTapButtonAction() {
-        self.presenter.showGreeting()
-    }
-    
-    func setConstraint() {
-        view.addSubview(greetingLabel)
-        view.addSubview(showButton)
-        NSLayoutConstraint.activate([
-            greetingLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            greetingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            greetingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            greetingLabel.heightAnchor.constraint(equalToConstant: 200)
-        ])
+        setConstraints()
+        setupTableView()
         
-        NSLayoutConstraint.activate([
-            showButton.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 40),
-            showButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            showButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            showButton.heightAnchor.constraint(equalToConstant: 60)
-        ])
+    }
+
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
 extension MainViewController: MainViewProtocol {
-    func setGreeting(greeting: String) {
-        self.greetingLabel.text = greeting
+    func succes() {
+        tableView.reloadData()
+    }
+    
+    func failure(error: Error) {
+        print(error)
+    }
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.comments?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        let comment = presenter.comments?[indexPath.row]
+        cell.textLabel?.text = comment?.body
+        
+        return cell
+
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+}
+
+
+extension MainViewController {
+    func setConstraints() {
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        ])
     }
 }

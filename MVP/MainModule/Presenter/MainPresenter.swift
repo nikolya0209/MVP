@@ -8,27 +8,41 @@
 import Foundation
 
 protocol MainViewProtocol: class {
-    func setGreeting(greeting: String)
+    func succes()
+    func failure(error: Error)
 }
 protocol MainViewPresenterProtocol: class {
-    init(view: MainViewProtocol, person: Person)
-    func showGreeting()
+    init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
+    func getComments()
+    var comments: [Comment]? { get set }
+    
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-   
-    let view: MainViewProtocol
-    let person: Person
+    var comments: [Comment]?
     
-    required init(view: MainViewProtocol, person: Person) {
+    weak var view: MainViewProtocol?
+    let networkService: NetworkServiceProtocol!
+    
+    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
-        self.person = person
+        self.networkService = networkService
+        getComments()
     }
     
-    func showGreeting() {
-        let greeting = self.person.firstName + " " + self.person.lastName
-        self.view.setGreeting(greeting: greeting)
+    func getComments() {
+        networkService.getComments { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let comments):
+                    self.comments = comments
+                    self.view?.succes()
+                case .failure(let error):
+                    self.view?.failure(error: error)
+                }
+            }
+        }
     }
-    
 }
 
