@@ -18,14 +18,14 @@ class AsselderModuleBuilder: AsselderBuilderProtocol {
     func createMainModule(roruter: RouterProtocol) -> UIViewController {
         let networkService = NetworkService()
         let view = MainViewController()
-        let presenter = MainPresenter(view: view, networkService: networkService)
+        let presenter = MainPresenter(view: view, networkService: networkService, router: roruter)
         view.presenter = presenter
         return view
     }
     func createDetailModule(comment: Comment?, roruter: RouterProtocol) -> UIViewController {
         let networkService = NetworkService()
         let view = DetailViewController()
-        let presenter = DetailPresenter(view: view, networkService: networkService, comment: comment)
+        let presenter = DetailPresenter(view: view, networkService: networkService, router: roruter, comment: comment)
         view.presenter = presenter
         return view
     }
