@@ -15,13 +15,14 @@
 		525B22E727949AEC009057C5 /* MVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B22E627949AEC009057C5 /* MVPTests.swift */; };
 		525B22F227949AEC009057C5 /* MVPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B22F127949AEC009057C5 /* MVPUITests.swift */; };
 		525B23042794A28A009057C5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B23032794A28A009057C5 /* MainPresenter.swift */; };
-		525B230C2795F905009057C5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230B2795F905009057C5 /* ModuleBuilder.swift */; };
+		525B230C2795F905009057C5 /* AsselderModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230B2795F905009057C5 /* AsselderModuleBuilder.swift */; };
 		525B231027974857009057C5 /* MVPPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B230F27974857009057C5 /* MVPPresenterTest.swift */; };
 		525B231227988CC0009057C5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B231127988CC0009057C5 /* Comment.swift */; };
 		525B231727988DEC009057C5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B231627988DEC009057C5 /* NetworkService.swift */; };
 		525B231B279899E9009057C5 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B231A279899E9009057C5 /* DetailPresenter.swift */; };
 		525B231F27989C20009057C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B231D27989C20009057C5 /* DetailViewController.swift */; };
 		525B232027989C20009057C5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525B231E27989C20009057C5 /* DetailViewController.xib */; };
+		525B23242799BB85009057C5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525B23232799BB85009057C5 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +57,14 @@
 		525B22F127949AEC009057C5 /* MVPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPUITests.swift; sourceTree = "<group>"; };
 		525B22F327949AEC009057C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		525B23032794A28A009057C5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		525B230B2795F905009057C5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		525B230B2795F905009057C5 /* AsselderModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsselderModuleBuilder.swift; sourceTree = "<group>"; };
 		525B230F27974857009057C5 /* MVPPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenterTest.swift; sourceTree = "<group>"; };
 		525B231127988CC0009057C5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		525B231627988DEC009057C5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		525B231A279899E9009057C5 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		525B231D27989C20009057C5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		525B231E27989C20009057C5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		525B23232799BB85009057C5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +182,8 @@
 			children = (
 				525B22CF27949AEA009057C5 /* AppDelegate.swift */,
 				525B22D127949AEA009057C5 /* SceneDelegate.swift */,
-				525B230B2795F905009057C5 /* ModuleBuilder.swift */,
+				525B230B2795F905009057C5 /* AsselderModuleBuilder.swift */,
+				525B23232799BB85009057C5 /* Router.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -361,12 +364,13 @@
 			files = (
 				525B231F27989C20009057C5 /* DetailViewController.swift in Sources */,
 				525B23042794A28A009057C5 /* MainPresenter.swift in Sources */,
+				525B23242799BB85009057C5 /* Router.swift in Sources */,
 				525B231227988CC0009057C5 /* Comment.swift in Sources */,
 				525B22D427949AEA009057C5 /* MainViewController.swift in Sources */,
 				525B231B279899E9009057C5 /* DetailPresenter.swift in Sources */,
 				525B22D027949AEA009057C5 /* AppDelegate.swift in Sources */,
 				525B22D227949AEA009057C5 /* SceneDelegate.swift in Sources */,
-				525B230C2795F905009057C5 /* ModuleBuilder.swift in Sources */,
+				525B230C2795F905009057C5 /* AsselderModuleBuilder.swift in Sources */,
 				525B231727988DEC009057C5 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
