@@ -83,6 +83,26 @@ class MVPPresenterTest: XCTestCase {
         XCTAssertEqual(catchComments?.count, comments.count)
     }
     
-   
+    func testGetFailureComments() {
+        let comment = Comment(postId: 1, id: 2, name: "Foo", email: "Baz", body: "Bar")
+        comments.append(comment)
+        
+        view = MockView()
+        networkService = MockNetworkService()
+        presenter = MainPresenter(view: view, networkService: networkService, router: router)
+        
+        var catchError: Error?
+        
+        networkService.getComments { result in
+            switch result {
+            
+            case .success(_):
+                break
+            case .failure(let error):
+                catchError = error
+            }
+        }
+        XCTAssertNotNil(catchError)
+    }
     
 }
